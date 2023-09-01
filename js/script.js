@@ -32,6 +32,16 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         mario.classList.remove('jump');
     }, 600);
 }
+}else{
+    if (pontos == 100) {
+      pipe.style.animation = 'pipeAnimation 930ms infinite linear';
+      
+    }
+
+    if (pontos == 200) {
+      pipe.style.animation = 'pipeAnimation 860ms infinite linear';
+      
+    }
 }
 
 function atualizarPagina() {
@@ -65,16 +75,6 @@ const loop = setInterval(() => {
     const marioPosition = window.getComputedStyle(mario).bottom.replace('px', '');
 
 
-    if (pontos == 100) {
-      pipe.style.animation = 'pipeAnimation 930ms infinite linear';
-      
-    }
-
-    if (pontos == 200) {
-      pipe.style.animation = 'pipeAnimation 860ms infinite linear';
-      
-    }
-
     
 
 
@@ -100,7 +100,6 @@ const loop = setInterval(() => {
         clearInterval(loop);
 
         document.addEventListener('keydown', atualizarPagina);
-        document.addEventListener('click', atualizarPagina);
 
 
     }
@@ -114,8 +113,6 @@ const loop = setInterval(() => {
 
 document.addEventListener('keydown', jump);
 document.addEventListener('touchstart', jump);
-
-document.addEventListener('click', jump);
 
 
 
